@@ -30,7 +30,7 @@ public class LinkedDequeue
      *  This constructor for the class will set up the needed instance variables
      *  which begin with no nodes present and thus are set to null.
      */
-    public LinkedQueue ()
+    public LinkedDequeue ()
     {
         tail = head = null;
         count = 0;
