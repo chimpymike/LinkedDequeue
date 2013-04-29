@@ -11,7 +11,7 @@
 public class LinkedDequeue
 {
     private QueueNode tail;
-    private QueueNode front;
+    private QueueNode head;
     private int count;
     
     /**
@@ -32,14 +32,14 @@ public class LinkedDequeue
      */
     public LinkedQueue ()
     {
-        tail = front = null;
+        tail = head = null;
         count = 0;
     }
 
     /**
      *  This method will construct a new QueueNode and add it onto the tail
      *  of the queue (standard FIFO behavior). If it is the first node added into
-     *  the queue, both front and tail will reference it, otherwise it is added
+     *  the queue, both head and tail will reference it, otherwise it is added
      *  using the tail variable.  The node counter is also updated.
      *
      *  @param   x     The Object to be added as part of a new QueueNode
@@ -50,7 +50,7 @@ public class LinkedDequeue
         temp.item = x;
         temp.link = null;
 
-        if (tail == null) front = tail = temp;
+        if (tail == null) head = tail = temp;
         else
         {
             tail.link = temp;
@@ -80,7 +80,7 @@ public class LinkedDequeue
     }
     
     /**
-     *  This method will remove an item from the front of the queue.  
+     *  This method will remove an item from the head of the queue.  
      *  In doing so, the queue variables are reset to detach the node,
      *  and the Object which it contains is then returned.  The queue
      *  counter is also updated to reflect the removal.
@@ -92,9 +92,9 @@ public class LinkedDequeue
        if ( empty() ) return null;
        else
        {
-            Object tempItem = front.item;
-            front = front.link;
-            if (front == null)   tail = null;
+            Object tempItem = head.item;
+            head = head.link;
+            if (head == null)   tail = null;
             count -- ;
             return tempItem;
         }
