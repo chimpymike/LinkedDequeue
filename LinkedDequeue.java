@@ -21,8 +21,9 @@ public class LinkedDequeue
      */
      class QueueNode        // an inner class
      {
-       private Object item;
-       private QueueNode link;
+
+        private Object item;
+        private QueueNode link;
    }
 
     /**
