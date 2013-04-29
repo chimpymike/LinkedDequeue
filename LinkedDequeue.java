@@ -148,4 +148,16 @@ public class LinkedDequeue
     {
         return count;
     }
+
+    public String toString()
+    {
+        StringBuilder dequeueOut = new StringBuilder();
+        QueueNode currentNode = head;
+        do
+        {
+            dequeueOut.add(currentNode.item);
+            currentNode = currentNode.link;
+        } until (currentNode.link == null);
+        return dequeueOut;
+    }
 }
