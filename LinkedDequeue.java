@@ -63,7 +63,7 @@ public class LinkedDequeue
     {
         QueueNode temp = new QueueNode();
         temp.item = o;
-        temp.link = head.link;
+        temp.link = head;
 
         if (head == null) head = tail = temp;
         else
