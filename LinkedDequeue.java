@@ -158,7 +158,12 @@ public class LinkedDequeue
         {
             dequeueOut.add(currentNode.item + newline);
             currentNode = currentNode.link;
-        } until (currentNode.link == null);
+        } while (currentNode.link != null);
         return dequeueOut;
+    }
+
+    public static void main(String[] args)
+    {
+
     }
 }
