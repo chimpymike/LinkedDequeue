@@ -10,7 +10,7 @@
 
 public class LinkedDequeue
 {
-    private QueueNode rear;
+    private QueueNode tail;
     private QueueNode front;
     private int count;
     
@@ -32,15 +32,15 @@ public class LinkedDequeue
      */
     public LinkedQueue ()
     {
-        rear = front = null;
+        tail = front = null;
         count = 0;
     }
 
     /**
-     *  This method will construct a new QueueNode and add it onto the rear
+     *  This method will construct a new QueueNode and add it onto the tail
      *  of the queue (standard FIFO behavior). If it is the first node added into
-     *  the queue, both front and rear will reference it, otherwise it is added
-     *  using the rear variable.  The node counter is also updated.
+     *  the queue, both front and tail will reference it, otherwise it is added
+     *  using the tail variable.  The node counter is also updated.
      *
      *  @param   x     The Object to be added as part of a new QueueNode
      */
@@ -50,11 +50,11 @@ public class LinkedDequeue
         temp.item = x;
         temp.link = null;
 
-        if (rear == null) front = rear = temp;
+        if (tail == null) front = tail = temp;
         else
         {
-            rear.link = temp;
-            rear = temp;
+            tail.link = temp;
+            tail = temp;
         }
         count++ ;
     }
@@ -94,7 +94,7 @@ public class LinkedDequeue
        {
             Object tempItem = front.item;
             front = front.link;
-            if (front == null)   rear = null;
+            if (front == null)   tail = null;
             count -- ;
             return tempItem;
         }
