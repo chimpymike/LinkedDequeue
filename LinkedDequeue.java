@@ -3,12 +3,12 @@
  *  This class represents a Queue datatype implemented using a singly-linked
  *  list with appropriate operations.
  *
- * @author:	Henry Leitner
+ * @author: Henry Leitner
  * @version: Last modified on April 11, 2013
  * Implements a Queue as a linked-list
  */
 
-public class LinkedQueue
+public class LinkedDequeue
 {
     private QueueNode rear;
     private QueueNode front;
@@ -21,9 +21,9 @@ public class LinkedQueue
      */
      class QueueNode        // an inner class
      {
-	 private Object item;
-	 private QueueNode link;
-     }
+       private Object item;
+       private QueueNode link;
+   }
 
     /**
      *  This constructor for the class will set up the needed instance variables
@@ -31,8 +31,8 @@ public class LinkedQueue
      */
     public LinkedQueue ()
     {
-	rear = front = null;
-	count = 0;
+        rear = front = null;
+        count = 0;
     }
 
     /**
@@ -45,17 +45,17 @@ public class LinkedQueue
      */
     public void add (Object x)
     {
-	QueueNode temp = new QueueNode();
-	temp.item = x;
-	temp.link = null;
-	
-	if (rear == null) front = rear = temp;
-	else
-	{
-	    rear.link = temp;
-	    rear = temp;
-	}
-	count++ ;
+        QueueNode temp = new QueueNode();
+        temp.item = x;
+        temp.link = null;
+
+        if (rear == null) front = rear = temp;
+        else
+        {
+            rear.link = temp;
+            rear = temp;
+        }
+        count++ ;
     }
 
     /**
@@ -65,9 +65,9 @@ public class LinkedQueue
      */
     public boolean empty()
     {
-	return ( count == 0 );
+        return ( count == 0 );
     }
-   
+
     /**
      *  This method will evaluate and return the current size of the queue.
      *
@@ -75,7 +75,7 @@ public class LinkedQueue
      */
     public int size()
     {
-	return count;
+        return count;
     }
     
     /**
@@ -86,16 +86,16 @@ public class LinkedQueue
      *
      *  @return     The Object which was just removed from the queue.
      */
-   public Object delete ()
-   {
-     if ( empty() ) return null;
-     else
-     {
-        Object tempItem = front.item;
-        front = front.link;
-        if (front == null)   rear = null;
-        count -- ;
-        return tempItem;
-      }
-   }
+    public Object delete ()
+    {
+       if ( empty() ) return null;
+       else
+       {
+            Object tempItem = front.item;
+            front = front.link;
+            if (front == null)   rear = null;
+            count -- ;
+            return tempItem;
+        }
+    }
 }
