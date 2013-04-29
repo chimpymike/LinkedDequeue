@@ -44,7 +44,7 @@ public class LinkedDequeue
      *
      *  @param   x     The Object to be added as part of a new QueueNode
      */
-    public void add (Object x)
+    public void tailAdd (Object x)
     {
         QueueNode temp = new QueueNode();
         temp.item = x;
