@@ -152,10 +152,11 @@ public class LinkedDequeue
     public String toString()
     {
         StringBuilder dequeueOut = new StringBuilder();
+        String newline = System.getProperty("line.separator");
         QueueNode currentNode = head;
         do
         {
-            dequeueOut.add(currentNode.item);
+            dequeueOut.add(currentNode.item + newline);
             currentNode = currentNode.link;
         } until (currentNode.link == null);
         return dequeueOut;
