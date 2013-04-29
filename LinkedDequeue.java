@@ -59,6 +59,20 @@ public class LinkedDequeue
         count++ ;
     }
 
+    public void headAdd (Object o)
+    {
+        QueueNode temp = new QueueNode();
+        temp.item = o;
+        temp.link = head.link;
+
+        if (head == null) head = tail = temp;
+        else
+        {
+            head = temp;
+        }
+        count++;
+    }
+
     /**
      *  This method will test for an empty queue and return a boolean result.
      *
