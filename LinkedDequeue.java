@@ -73,6 +73,11 @@ public class LinkedDequeue
         count++;
     }
 
+    public Object headPeek()
+    {
+        return head.item;
+    }
+
     /**
      *  This method will test for an empty queue and return a boolean result.
      *
