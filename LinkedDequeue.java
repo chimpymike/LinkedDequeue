@@ -64,6 +64,31 @@ public class LinkedDequeue
         return tail.item;
     }
 
+    public Object tailRemove()
+    {
+        if ( isEmpty() ) return null;
+        else
+        {
+            Object tempItem = tail.item;
+
+            QueueNode newTail = null;
+            QueueNode next = head;
+
+            while (next.link != null)
+            {
+                newTail = next;
+                next = next.link;
+            }
+
+            tail = newTail;
+            tail.link = null;
+            if (tail == null) head == null;
+            count --;
+
+            return tempItem;
+        }
+    }
+
     public void headAdd (Object o)
     {
         QueueNode temp = new QueueNode();
@@ -83,7 +108,7 @@ public class LinkedDequeue
         return head.item;
     }
 
-        /**
+    /**
      *  This method will remove an item from the head of the queue.  
      *  In doing so, the queue variables are reset to detach the node,
      *  and the Object which it contains is then returned.  The queue
