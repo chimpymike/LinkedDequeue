@@ -59,6 +59,11 @@ public class LinkedDequeue
         count++ ;
     }
 
+    public Object tailPeek()
+    {
+        return tail.item;
+    }
+
     public void headAdd (Object o)
     {
         QueueNode temp = new QueueNode();
