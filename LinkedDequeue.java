@@ -78,6 +78,27 @@ public class LinkedDequeue
         return head.item;
     }
 
+        /**
+     *  This method will remove an item from the head of the queue.  
+     *  In doing so, the queue variables are reset to detach the node,
+     *  and the Object which it contains is then returned.  The queue
+     *  counter is also updated to reflect the removal.
+     *
+     *  @return     The Object which was just removed from the queue.
+     */
+    public Object headRemove ()
+    {
+       if ( empty() ) return null;
+       else
+       {
+            Object tempItem = head.item;
+            head = head.link;
+            if (head == null)   tail = null;
+            count -- ;
+            return tempItem;
+        }
+    }
+
     /**
      *  This method will test for an empty queue and return a boolean result.
      *
@@ -96,26 +117,5 @@ public class LinkedDequeue
     public int size()
     {
         return count;
-    }
-    
-    /**
-     *  This method will remove an item from the head of the queue.  
-     *  In doing so, the queue variables are reset to detach the node,
-     *  and the Object which it contains is then returned.  The queue
-     *  counter is also updated to reflect the removal.
-     *
-     *  @return     The Object which was just removed from the queue.
-     */
-    public Object delete ()
-    {
-       if ( empty() ) return null;
-       else
-       {
-            Object tempItem = head.item;
-            head = head.link;
-            if (head == null)   tail = null;
-            count -- ;
-            return tempItem;
-        }
     }
 }
