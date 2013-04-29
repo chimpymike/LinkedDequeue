@@ -82,7 +82,7 @@ public class LinkedDequeue
 
             tail = newTail;
             tail.link = null;
-            if (tail == null) head == null;
+            if (tail == null) head = null;
             count --;
 
             return tempItem;
