@@ -156,7 +156,7 @@ public class LinkedDequeue
         QueueNode currentNode = head;
         do
         {
-            dequeueOut.add(currentNode.item + newline);
+            dequeueOut.append(currentNode.item + newline);
             currentNode = currentNode.link;
         } while (currentNode.link != null);
         return dequeueOut;
