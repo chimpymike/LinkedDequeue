@@ -88,7 +88,7 @@ public class LinkedDequeue
      */
     public Object headRemove ()
     {
-       if ( empty() ) return null;
+       if ( isEmpty() ) return null;
        else
        {
             Object tempItem = head.item;
@@ -104,7 +104,7 @@ public class LinkedDequeue
      *
      *  @return     true for an empty list; false if the queue contains QueueNodes.
      */
-    public boolean empty()
+    public boolean isEmpty()
     {
         return ( count == 0 );
     }
